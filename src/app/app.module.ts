@@ -30,6 +30,7 @@ import { AdminOrdersComponent } from "./components/admin/admin-orders/admin-orde
 import { LoginComponent } from "./components/login/login.component";
 import { ProductFormComponent } from "./components/admin/product-form/product-form.component";
 import { ProductEditComponent } from "./components/admin/product-edit/product-edit.component";
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 // ROUTES
 const appRoutes: Routes = [
@@ -89,7 +90,8 @@ const appRoutes: Routes = [
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductFormComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

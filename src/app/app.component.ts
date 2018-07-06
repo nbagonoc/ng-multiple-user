@@ -16,13 +16,16 @@ export class AppComponent {
   ) {
     // redirect from the page after signin(depending on what page you came from)
     authService.user$.subscribe(user => {
-      if (user) {
-        // if user signs-in, save him at database.
-        userService.save(user);
+      if (!user) return;
+      // if user signs-in, save him at database.
+      userService.save(user);
 
-        let returnUrl = localStorage.getItem("returnUrl");
-        router.navigateByUrl(returnUrl);
-      }
+      let returnUrl = localStorage.getItem("returnUrl");
+
+      if (!returnUrl) return;
+
+      localStorage.removeItem("returnUrl");
+      router.navigateByUrl(returnUrl);
     });
   }
 }
