@@ -27,17 +27,15 @@ import { OrderSuccessComponent } from "./components/order-success/order-success.
 import { MyOrdersComponent } from "./components/my-orders/my-orders.component";
 import { AdminProductsComponent } from "./components/admin/admin-products/admin-products.component";
 import { AdminOrdersComponent } from "./components/admin/admin-orders/admin-orders.component";
-import { LoginComponent } from "./components/login/login.component";
 import { ProductFormComponent } from "./components/admin/product-form/product-form.component";
 import { ProductEditComponent } from "./components/admin/product-edit/product-edit.component";
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 // ROUTES
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "products", component: ProductsComponent },
   { path: "shopping-cart", component: ShoppingCartComponent },
-  { path: "login", component: LoginComponent },
   {
     path: "check-out",
     component: CheckOutComponent,
@@ -86,7 +84,6 @@ const appRoutes: Routes = [
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    LoginComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductFormComponent,
