@@ -1,10 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* template driver forms simple way of adding error border input colors */
 .form-control.ng-touched.ng-invalid {
   border: 2px solid #dc3545;
 }
 
+body p {
+  font-weight: lighter !important;
+}
+
+/* sticky top the sidebar */
 .sticky-top {
-  top: 15px;
+  top: 15px !important;
+}
+
+/* banner */
+.banner {
+  height: 350px;
+  background-position: center center;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* featured */
+.card-img-top {
+  height: 150px;
+  background-position: center center;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* vertical align elements */
+.vetical-align {
+  position: relative;
+}
+.vertical-align-item {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* MEDIA QUERIES */
+/*extra small*/
+@media (max-width: 566px) {
+  .display-3 {
+    font-size: 2rem !important;
+  }
+  .display-4 {
+    font-size: 1.7rem !important;
+  }
+}
+/* small */
+@media (min-width: 567px) {
+  .display-3 {
+    font-size: 2.5rem !important;
+  }
+  .display-4 {
+    font-size: 2.2rem !important;
+  }
+}
+/*medium*/
+@media (min-width: 768px) {
+  .display-3 {
+    font-size: 3.5rem !important;
+  }
+  .display-4 {
+    font-size: 3rem !important;
+  }
+}
+/*large*/
+@media (min-width: 992px) {
+  .display-3 {
+    font-size: 4.5rem !important;
+  }
+  .display-4 {
+    font-size: 3.5rem !important;
+  }
+}
+/*Extra large*/
+@media (min-width: 1200px) {
+  .display-3 {
+    font-size: 4.5rem !important;
+  }
+  .display-4 {
+    font-size: 3.5rem !important;
+  }
 }

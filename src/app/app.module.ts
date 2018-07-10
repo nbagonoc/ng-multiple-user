@@ -11,7 +11,6 @@ import { DataTableModule } from "angular5-data-table";
 // SERIVECES
 import { AuthService } from "./services/auth.service";
 import { UserService } from "./services/user.service";
-import { ProductService } from "./services/product.service";
 import { AuthGuardService } from "./services/auth-guard.service";
 import { AdminGuardService } from "./services/admin-guard.service";
 
@@ -20,55 +19,23 @@ import { AppComponent } from "./app.component";
 import { environment } from "../environments/environment";
 import { NavComponent } from "./components/nav/nav.component";
 import { HomeComponent } from "./components/home/home.component";
-import { ProductsComponent } from "./components/products/products.component";
-import { ShoppingCartComponent } from "./components/shopping-cart/shopping-cart.component";
-import { CheckOutComponent } from "./components/check-out/check-out.component";
-import { OrderSuccessComponent } from "./components/order-success/order-success.component";
-import { MyOrdersComponent } from "./components/my-orders/my-orders.component";
-import { AdminProductsComponent } from "./components/admin/admin-products/admin-products.component";
-import { AdminOrdersComponent } from "./components/admin/admin-orders/admin-orders.component";
-import { ProductFormComponent } from "./components/admin/product-form/product-form.component";
-import { ProductEditComponent } from "./components/admin/product-edit/product-edit.component";
-import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { UserSidebarComponent } from "./components/user/user-sidebar/user-sidebar.component";
+import { DashboardComponent } from "./components/user/dashboard/dashboard.component";
+import { ManageUsersComponent } from "./components/user/manage-users/manage-users.component";
+import { BannerComponent } from "./components/banner/banner.component";
+import { FeaturedComponent } from "./components/featured/featured.component";
 
 // ROUTES
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "products", component: ProductsComponent },
-  { path: "shopping-cart", component: ShoppingCartComponent },
   {
-    path: "check-out",
-    component: CheckOutComponent,
+    path: "user/dashboard",
+    component: DashboardComponent,
     canActivate: [AuthGuardService]
   },
   {
-    path: "order-success",
-    component: OrderSuccessComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: "my/orders",
-    component: MyOrdersComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: "admin/products/new",
-    component: ProductFormComponent,
-    canActivate: [AuthGuardService, AdminGuardService]
-  },
-  {
-    path: "admin/products/:id",
-    component: ProductEditComponent,
-    canActivate: [AuthGuardService, AdminGuardService]
-  },
-  {
-    path: "admin/products",
-    component: AdminProductsComponent,
-    canActivate: [AuthGuardService, AdminGuardService]
-  },
-  {
-    path: "admin/orders",
-    component: AdminOrdersComponent,
+    path: "user/manage-users",
+    component: ManageUsersComponent,
     canActivate: [AuthGuardService, AdminGuardService]
   },
   { path: "**", component: HomeComponent }
@@ -79,16 +46,11 @@ const appRoutes: Routes = [
     AppComponent,
     NavComponent,
     HomeComponent,
-    ProductsComponent,
-    ShoppingCartComponent,
-    CheckOutComponent,
-    OrderSuccessComponent,
-    MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
-    ProductFormComponent,
-    ProductEditComponent,
-    SidebarComponent
+    UserSidebarComponent,
+    DashboardComponent,
+    ManageUsersComponent,
+    BannerComponent,
+    FeaturedComponent
   ],
   imports: [
     BrowserModule,
@@ -100,13 +62,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [
-    AuthService,
-    UserService,
-    ProductService,
-    AuthGuardService,
-    AdminGuardService
-  ],
+  providers: [AuthService, UserService, AuthGuardService, AdminGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

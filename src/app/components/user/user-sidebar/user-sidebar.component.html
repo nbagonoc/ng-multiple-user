@@ -1,0 +1,11 @@
+<div *ngIf="appUser" class="list-group sticky-top">
+  <a href="#" routerLink="/user/dashboard" class="text-dark list-group-item list-group-item-action">
+    Dashboard
+  </a>
+  <a *ngIf="appUser.isAdmin" href="#" routerLink="/user/manage-users" class="text-dark list-group-item list-group-item-action">
+    Manage Users
+  </a>
+  <a href="/" (click)="onLogout()" class="text-dark list-group-item list-group-item-action">
+    Logout
+  </a>
+</div>

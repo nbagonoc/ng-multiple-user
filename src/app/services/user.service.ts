@@ -13,7 +13,8 @@ export class UserService {
   save(user: firebase.User) {
     this.angularFireDatabase.object("/users/" + user.uid).update({
       name: user.displayName,
-      email: user.email
+      email: user.email,
+      photo: user.photoURL
     });
   }
   get(uid: string): Observable<any> {

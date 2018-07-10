@@ -23,7 +23,8 @@ export class AuthService {
   }
 
   login() {
-    let returnUrl = this.route.snapshot.queryParamMap.get("returnUrl") || "/";
+    let returnUrl =
+      this.route.snapshot.queryParamMap.get("returnUrl") || "/user/dashboard";
     localStorage.setItem("returnUrl", returnUrl);
 
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
